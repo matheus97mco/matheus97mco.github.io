@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Programação</title>
+    <!-- Inclui o CDN do Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366F1', // Indigo 500
+                        secondary: '#4F46E5', // Indigo 600
+                        accent: '#FCD34D', // Amber 320
+                        darkbg: '#1F2937', // Gray 800
+                        lighttext: '#F9FAFB', // Gray 50
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Link para a fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@320;400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones Lucide (para uso direto no HTML) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Estilos básicos para o corpo e scroll-behavior suave */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F9FAFB;
+            /* Cor de fundo clara */
+            color: #1F2937;
+            /* Cor do texto padrão */
+        }
+
+        /* Estilo para ícones SVG, garantindo alinhamento e tamanho */
+        .icon {
+            display: inline-block;
+            width: 1.32em;
+            /* Aumenta um pouco o tamanho do ícone */
+            height: 1.32em;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vertical-align: middle;
+            /* Alinha o ícone verticalmente com o texto */
+        }
+
+        /* Animações para a seção Hero */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .animate-fade-in-up-delay {
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+    <!-- Barra de Navegação -->
+    <header class="bg-darkbg text-lighttext p-4 shadow-lg fixed w-full z-50">
+        <nav class="container mx-auto flex justify-between items-center flex-wrap">
+            <a href="index.html"
+                class="text-2xl font-bold text-primary hover:text-accent transition-colors duration-320">Voltar</a>
+            <div class="block lg:hidden">
+                <button id="nav-toggle"
+                    class="flex items-center px-3 py-2 border rounded text-lighttext border-lighttext hover:text-primary hover:border-primary transition-colors duration-320">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+    <div class="container mx-auto px-6 sm:px-8 lg:px-12 py-8 max-w-4xl bg-white rounded-lg shadow-md overflow-auto">
+        <div class="bg-darkbg text-gray-200 rounded-lg shadow-lg p-6">
+
+            <h2 class="text-3xl font-bold mb-4">📊 Projeto Análise de Dados de Varejo com Python</h2>
+
+            <p class="mb-2"><span class="font-semibold text-gray-300">📌 Fundamentos de Python Para Análise de Dados e
+                    Data Science – Data Science Academy</span></p>
+
+            <h3 class="text-xl font-bold mb-2">📖 Descrição</h3>
+            <p class="text-gray-300 mb-6">
+                Este projeto do curso Fundamentos de Python Para Análise de Dados e Data Science da Data Science Academy
+                consistiu na exploração e análise de um dataset de vendas do setor varejista. Utilizando Python 3,
+                Pandas, Numpy, Matplotlib, Seaborn e Jupyter Notebook, foram realizadas consultas, operações e
+                visualizações para responder perguntas de negócio, como cidades e segmentos com maior venda, evolução
+                mensal das vendas e simulação de descontos. O projeto reforçou habilidades de manipulação de dados,
+                criação de gráficos personalizados e aplicação de lógica de negócios em problemas reais, conectando
+                programação em Python com análise prática de dados. 🚀</p>
+
+        </div>
+    </div>
+
+    <!-- Seção do Projeto com iframe do Jupyter Notebook -->
+    <div class="mt-4">
+        <iframe
+            src="https://nbviewer.org/github/matheus97mco/Projeto_Data_science_academy/blob/main/Analise%20Explorat%C3%B3ria.ipynb"
+            width="100%" height="600" frameborder="0"></iframe>
+    </div>
+
+
+    <footer class="bg-darkbg text-lighttext py-1 text-center fixed bottom-0 left-0 w-full z-50">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Matheus. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para alternar o menu de navegação em telas menores
+        document.getElementById('nav-toggle').onclick = function () {
+            document.getElementById('nav-content').classList.toggle('hidden');
+        }
+
+        // Fechar o menu ao clicar em um item (opcional, para navegação suave)
+        document.querySelectorAll('#nav-content a').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth < 1024) { // Apenas em telas menores
+                    document.getElementById('nav-content').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
